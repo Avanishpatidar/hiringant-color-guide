@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="A shareable, practical color guide for HiringAnt: brand colors, accessible pairings, theme surfaces, and ready-to-use tokens.">
+  <link rel="canonical" href="https://avanishpatidar.github.io/hiringant-color-guide/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avanishpatidar.github.io/hiringant-color-guide/">
+  <meta property="og:title" content="HiringAnt Color Guide">
+  <meta property="og:description" content="Brand colors, accessible pairings, light and dark surfaces, and ready-to-use HiringAnt tokens.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HiringAnt Color Guide">
+  <meta name="twitter:description" content="Brand colors, accessible pairings, light and dark surfaces, and ready-to-use HiringAnt tokens.">
+  <title>HiringAnt — Color guide</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --orange: #FF5A00;
+      --orange-hover: #E64F00;
+      --orange-deep: #BF4100;
+      --orange-soft: #FFF5F0;
+      --orange-pale: #FFF4ED;
+      --yellow: #FFC800;
+      --yellow-hover: #E0AC00;
+      --yellow-pale: #FFFBEB;
+      --ink: #141414;
+      --ink-strong: #18181B;
+      --muted: #6F6F78;
+      --canvas: #FAFAFA;
+      --surface: #FFFFFF;
+      --surface-2: #F4F4F5;
+      --line: #CBCBD2;
+      --success: #15803D;
+      --success-pale: #F0FDF4;
+      --warning: #B45309;
+      --warning-pale: #FFFBEB;
+      --danger: #B91C1C;
+      --danger-pale: #FEF2F2;
+      --info: #1D4ED8;
+      --info-pale: #EFF6FF;
+      --radius: 10px;
+      --page: #F4F4F5;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--orange-deep); outline-offset: 3px; }
+    .shell { max-width: 1240px; margin: 0 auto; padding: 0 38px 72px; }
+    .topbar {
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #D8D8DE;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: 17px; font-weight: 760; letter-spacing: -.055em; }
+    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; color: var(--ink-strong); background: var(--orange); border-radius: 9px; font-size: 18px; line-height: 1; font-weight: 850; letter-spacing: -.09em; }
+    .brand-word span { color: var(--orange-deep); }
+    .top-meta { color: var(--muted); font-size: 12px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      min-height: 390px;
+      margin: 34px 0 78px;
+      background: var(--surface);
+      border: 1px solid #E4E4E7;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .hero-copy { padding: clamp(34px, 5.4vw, 68px); align-self: center; }
+    .kicker { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 20px; color: var(--muted); font-size: 12px; font-weight: 650; }
+    .kicker::before { content: ""; width: 20px; height: 2px; background: var(--orange); }
+    h1 { max-width: 540px; margin: 0; font-size: clamp(42px, 6vw, 70px); line-height: .98; letter-spacing: -.075em; font-weight: 760; }
+    .hero-copy p { max-width: 430px; margin: 21px 0 0; color: var(--muted); font-size: 16px; }
+    .hero-copy strong { color: var(--ink); font-weight: 650; }
+    .hero-board { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 340px; padding: 34px; background: var(--orange); color: var(--ink-strong); }
+    .hero-board::before { content: ""; position: absolute; top: 35px; right: 36px; width: 128px; height: 128px; border: 1px solid rgb(24 24 27 / 22%); border-radius: 50%; }
+    .hero-board::after { content: ""; position: absolute; top: 62px; right: 63px; width: 74px; height: 74px; border: 1px solid rgb(24 24 27 / 22%); border-radius: 50%; }
+    .hero-board-label { position: relative; z-index: 1; margin: 0 0 12px; font-size: 11px; font-weight: 720; letter-spacing: .09em; text-transform: uppercase; }
+    .hero-pair { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .hero-chip { min-height: 112px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; background: rgb(255 255 255 / 28%); border: 1px solid rgb(24 24 27 / 20%); border-radius: 10px; }
+    .hero-chip.dark { background: var(--ink-strong); color: #fff; border-color: var(--ink-strong); }
+    .hero-chip b { font-size: 17px; letter-spacing: -.035em; }
+    .hero-chip code { font-family: inherit; font-size: 12px; opacity: .8; }
+    .hero-note { position: relative; z-index: 1; margin: 14px 0 0; font-size: 12px; color: rgb(24 24 27 / 76%); }
+    .contents { display: flex; flex-wrap: wrap; gap: 9px 23px; margin: -49px 0 65px; padding: 0 2px; }
+    .contents a { color: var(--muted); font-size: 12px; text-decoration: none; }
+    .contents a:hover { color: var(--orange-deep); text-decoration: underline; text-underline-offset: 3px; }
+    section { scroll-margin-top: 28px; margin: 0 0 76px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 0 0 25px; }
+    .section-head h2 { margin: 0; font-size: clamp(27px, 3.4vw, 38px); letter-spacing: -.06em; line-height: 1.08; }
+    .section-head p { max-width: 410px; margin: 0; color: var(--muted); font-size: 13px; }
+    .label { margin: 0 0 11px; color: var(--orange-deep); font-size: 11px; font-weight: 720; letter-spacing: .08em; text-transform: uppercase; }
+    .brand-colors { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1fr; gap: 12px; }
+    .swatch-card { overflow: hidden; background: var(--surface); border: 1px solid #E4E4E7; border-radius: var(--radius); }
+    .swatch-color { min-height: 120px; padding: 13px; display: flex; align-items: flex-end; justify-content: flex-end; }
+    .swatch-card:first-child .swatch-color { min-height: 153px; }
+    .swatch-meta { min-height: 81px; padding: 14px 15px 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .swatch-meta strong { display: block; font-size: 13px; letter-spacing: -.015em; }
+    .swatch-meta small { color: var(--muted); font-size: 11px; }
+    .copy-hex { border: 0; border-radius: 6px; background: transparent; color: var(--ink); padding: 5px 6px; cursor: pointer; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; white-space: nowrap; }
+    .copy-hex:hover { background: var(--surface-2); }
+    .ramp { margin-top: 22px; display: grid; grid-template-columns: repeat(6, 1fr); overflow: hidden; border: 1px solid #E4E4E7; border-radius: var(--radius); }
+    .ramp-cell { min-width: 0; height: 75px; padding: 9px; display: flex; flex-direction: column; justify-content: space-between; font-size: 10px; }
+    .ramp-cell b { font-size: 11px; }
+    .ramp-title { display: flex; justify-content: space-between; align-items: baseline; margin: 25px 0 10px; }
+    .ramp-title strong { font-size: 13px; }
+    .ramp-title span { color: var(--muted); font-size: 11px; }
+    .rule-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 18px; border: 1px solid #E4E4E7; border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+    .rule { padding: 19px 20px; }
+    .rule + .rule { border-left: 1px solid #E4E4E7; }
+    .rule .rule-mark { width: 28px; height: 4px; margin-bottom: 13px; background: var(--orange); }
+    .rule:nth-child(2) .rule-mark { background: var(--yellow); }
+    .rule:nth-child(3) .rule-mark { background: var(--ink-strong); }
+    .rule strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .rule p { margin: 0; color: var(--muted); font-size: 12px; }
+    .contrast-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contrast-card { padding: 23px; background: var(--surface); border: 1px solid #E4E4E7; border-radius: var(--radius); }
+    .contrast-card h3 { margin: 0 0 15px; font-size: 15px; letter-spacing: -.02em; }
+    .contrast-sample { min-height: 93px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 17px 18px; border-radius: 8px; }
+    .contrast-sample strong { font-size: 17px; line-height: 1.25; letter-spacing: -.025em; }
+    .ratio { flex: 0 0 auto; padding: 5px 8px; border-radius: 5px; font-size: 11px; font-weight: 700; }
+    .ratio.pass { background: #E7F6EC; color: #166534; }
+    .ratio.fail { background: #FEE2E2; color: #991B1B; }
+    .contrast-card p { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+    .contrast-foot { display: flex; gap: 9px; align-items: flex-start; margin-top: 15px; padding: 14px 16px; background: #FFF4ED; color: var(--ink-strong); border-left: 3px solid var(--orange); font-size: 12px; }
+    .contrast-foot strong { white-space: nowrap; }
+    .theme-stage { overflow: hidden; border: 1px solid #D8D8DE; border-radius: 14px; background: var(--surface); }
+    .theme-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #E4E4E7; }
+    .theme-toolbar p { margin: 0; color: var(--muted); font-size: 12px; }
+    .toggle { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid #D8D8DE; border-radius: 8px; background: var(--surface-2); }
+    .toggle button { border: 0; border-radius: 6px; padding: 7px 11px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; }
+    .toggle button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / 12%); }
+    .preview { --p-bg: #FAFAFA; --p-card: #FFFFFF; --p-inset: #F4F4F5; --p-text: #141414; --p-muted: #6F6F78; --p-border: #CBCBD2; padding: 24px; background: var(--p-bg); transition: background-color .18s ease, color .18s ease; }
+    .preview[data-theme="dark"] { --p-bg: #18181B; --p-card: #27272A; --p-inset: #343438; --p-text: #FAFAFA; --p-muted: #A1A1AA; --p-border: #52525B; }
+    .preview-window { max-width: 720px; margin: 0 auto; padding: 20px; background: var(--p-card); border: 1px solid var(--p-border); border-radius: 10px; color: var(--p-text); }
+    .preview-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid var(--p-border); }
+    .mini-brand { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 720; letter-spacing: -.03em; }
+    .mini-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
+    .profile { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 12px; padding: 18px 0; }
+    .avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--p-inset); color: var(--p-text); font-size: 13px; font-weight: 700; }
+    .profile strong { display: block; font-size: 13px; }
+    .profile small { color: var(--p-muted); font-size: 11px; }
+    .status-pill { padding: 5px 8px; border-radius: 99px; background: #E7F6EC; color: #166534; font-size: 10px; font-weight: 680; }
+    .preview-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 15px; border-top: 1px solid var(--p-border); }
+    .preview-bottom span { color: var(--p-muted); font-size: 11px; }
+    .preview-cta { border: 0; padding: 10px 14px; border-radius: 7px; background: var(--orange); color: var(--ink-strong); font-weight: 720; font-size: 11px; cursor: pointer; }
+    .preview-cta:hover { background: var(--orange-hover); }
+    .surface-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid #E4E4E7; border-radius: var(--radius); overflow: hidden; font-size: 12px; }
+    .surface-table th, .surface-table td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #E4E4E7; }
+    .surface-table th { background: var(--surface-2); color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .surface-table tr:last-child td { border-bottom: 0; }
+    .surface-table code, .token-row code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; }
+    .color-dot { display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -2px; border: 1px solid rgb(0 0 0 / 12%); border-radius: 3px; }
+    .semantic { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .semantic-item { padding: 16px; border: 1px solid #E4E4E7; border-radius: var(--radius); }
+    .semantic-item strong { display: block; margin-bottom: 2px; font-size: 13px; }
+    .semantic-item code { display: block; margin: 6px 0 8px; font-size: 10px; }
+    .semantic-item p { margin: 0; font-size: 11px; }
+    .semantic-item.success { background: var(--success-pale); color: var(--success); }
+    .semantic-item.warning { background: var(--warning-pale); color: var(--warning); }
+    .semantic-item.danger { background: var(--danger-pale); color: var(--danger); }
+    .semantic-item.info { background: var(--info-pale); color: var(--info); }
+    .semantic-note { margin: 13px 0 0; color: var(--muted); font-size: 12px; }
+    .handoff { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; align-items: stretch; }
+    .handoff-copy { padding: 25px; background: var(--ink-strong); color: #FAFAFA; border-radius: var(--radius); }
+    .handoff-copy h3 { margin: 0 0 9px; font-size: 21px; letter-spacing: -.04em; }
+    .handoff-copy p { margin: 0 0 18px; color: #C4C4CC; font-size: 13px; }
+    .copy-all { border: 0; border-radius: 7px; padding: 9px 12px; background: var(--yellow); color: var(--ink-strong); font-weight: 700; font-size: 12px; cursor: pointer; }
+    .copy-all:hover { background: #FFD633; }
+    pre { min-width: 0; margin: 0; padding: 21px; overflow: auto; background: #202024; color: #F4F4F5; border: 1px solid #45454D; border-radius: var(--radius); font: 12px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre .comment { color: #A1A1AA; }
+    pre .value { color: #FFC800; }
+    .print-note { display: flex; gap: 13px; padding: 17px 19px; background: var(--surface); border: 1px solid #E4E4E7; border-radius: var(--radius); }
+    .print-note .print-icon { display: grid; flex: 0 0 34px; width: 34px; height: 34px; place-items: center; border-radius: 8px; background: var(--yellow-pale); color: var(--ink-strong); font-weight: 800; }
+    .print-note strong { display: block; margin-bottom: 2px; font-size: 12px; }
+    .print-note p { margin: 0; color: var(--muted); font-size: 12px; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 18px; border-top: 1px solid #D8D8DE; color: var(--muted); font-size: 11px; }
+    #announce { position: fixed; left: 16px; bottom: 16px; z-index: 3; padding: 9px 13px; background: var(--ink-strong); color: #fff; border-radius: 7px; font-size: 12px; opacity: 0; transform: translateY(7px); pointer-events: none; transition: opacity .16s ease, transform .16s ease; }
+    #announce.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 760px) {
+      .shell { padding: 0 20px 52px; }
+      .hero { grid-template-columns: 1fr; margin-top: 20px; }
+      .hero-copy { padding: 34px 27px 30px; }
+      .hero-board { min-height: 260px; padding: 25px; }
+      .hero-board::before { width: 94px; height: 94px; top: 21px; right: 26px; }
+      .hero-board::after { width: 52px; height: 52px; top: 42px; right: 47px; }
+      .contents { margin-top: -47px; margin-bottom: 50px; }
+      section { margin-bottom: 58px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+      .brand-colors { grid-template-columns: 1fr 1fr; }
+      .swatch-card:first-child .swatch-color, .swatch-color { min-height: 100px; }
+      .ramp { grid-template-columns: repeat(3, 1fr); }
+      .rule-strip { grid-template-columns: 1fr; }
+      .rule + .rule { border-left: 0; border-top: 1px solid #E4E4E7; }
+      .contrast-layout { grid-template-columns: 1fr; }
+      .semantic { grid-template-columns: 1fr 1fr; }
+      .handoff { grid-template-columns: 1fr; }
+      .surface-table th, .surface-table td { padding: 11px 9px; }
+    }
+    @media (max-width: 420px) {
+      .top-meta { max-width: 110px; text-align: right; }
+      .brand-colors { gap: 8px; }
+      .swatch-meta { align-items: flex-start; flex-direction: column; }
+      .profile { grid-template-columns: 36px 1fr; }
+      .avatar { width: 36px; height: 36px; }
+      .status-pill { grid-column: 2; justify-self: start; }
+      .theme-toolbar { align-items: flex-start; flex-direction: column; }
+      .preview { padding: 13px; }
+      .preview-window { padding: 15px; }
+      .semantic { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: #fff; }
+      .shell { max-width: none; padding: 0; }
+      .topbar { height: 50px; }
+      .hero { margin: 20px 0 35px; min-height: 260px; break-inside: avoid; }
+      .hero-board { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .contents, .toggle, .copy-hex, .copy-all, #announce { display: none !important; }
+      section { margin-bottom: 35px; break-inside: avoid; }
+      .swatch-color, .ramp-cell, .preview, .preview-window, .semantic-item, .handoff-copy, pre { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      footer { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="HiringAnt color guide home">
+        <span class="brand-mark" aria-hidden="true">h</span>
+        <span class="brand-word">Hiring<span>Ant</span></span>
+      </a>
+      <div class="top-meta">Brand color guide · Web, product &amp; print</div>
+    </header>
+
+    <main id="top">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="kicker">A practical guide for the whole team</p>
+          <h1>Bright signal.<br>Clear choices.</h1>
+          <p>HiringAnt’s colors should feel <strong>energetic, useful, and easy to read.</strong> This guide gives designers, developers, and partners one shared source for choosing and applying them.</p>
+        </div>
+        <div class="hero-board" aria-label="The main brand color pair: orange and yellow">
+          <p class="hero-board-label">The HiringAnt signature</p>
+          <div class="hero-pair">
+            <div class="hero-chip"><b>Action</b><code>#FF5A00</code></div>
+            <div class="hero-chip dark"><b>Energy</b><code>#FFC800</code></div>
+          </div>
+          <p class="hero-note">Orange leads. Yellow adds a small, bright cue.</p>
+        </div>
+      </div>
+
+      <nav class="contents" aria-label="Guide contents">
+        <a href="#palette">Brand palette</a><a href="#balance">Color balance</a><a href="#contrast">Accessible pairings</a><a href="#preview">Live preview</a><a href="#surfaces">Light &amp; dark</a><a href="#states">Status colors</a><a href="#handoff">Copy tokens</a>
+      </nav>
+
+      <section id="palette">
+        <div class="section-head">
+          <div><p class="label">The palette</p><h2>Four colors do most of the work.</h2></div>
+          <p>Keep the product calm and neutral. Bring in orange for the main action, and yellow when a moment needs a little extra attention.</p>
+        </div>
+        <div class="brand-colors">
+          <article class="swatch-card">
+            <div class="swatch-color" style="background:#FF5A00"><span class="ratio pass">Primary fill</span></div>
+            <div class="swatch-meta"><div><strong>HiringAnt Orange</strong><small>Buttons, key actions, brand marks</small></div><button class="copy-hex" data-copy="#FF5A00" aria-label="Copy HiringAnt orange, #FF5A00">#FF5A00</button></div>
+          </article>
+          <article class="swatch-card">
+            <div class="swatch-color" style="background:#FFC800"><span class="ratio pass">Accent</span></div>
+            <div class="swatch-meta"><div><strong>HiringAnt Yellow</strong><small>Highlights, small callouts</small></div><button class="copy-hex" data-copy="#FFC800" aria-label="Copy HiringAnt yellow, #FFC800">#FFC800</button></div>
+          </article>
+          <article class="swatch-card">
+            <div class="swatch-color" style="background:#18181B"><span class="ratio pass">Core ink</span></div>
+            <div class="swatch-meta"><div><strong>Deep Ink</strong><small>Text on orange, dark surfaces</small></div><button class="copy-hex" data-copy="#18181B" aria-label="Copy deep ink, #18181B">#18181B</button></div>
+          </article>
+          <article class="swatch-card">
+            <div class="swatch-color" style="background:#BF4100"><span class="ratio pass">AA text</span></div>
+            <div class="swatch-meta"><div><strong>Deep Orange</strong><small>Orange text on light surfaces</small></div><button class="copy-hex" data-copy="#BF4100" aria-label="Copy deep orange, #BF4100">#BF4100</button></div>
+          </article>
+        </div>
+
+        <div class="ramp-title"><strong>Orange ramp</strong><span>Use lighter steps for tinted backgrounds; darker steps for text and hover.</span></div>
+        <div class="ramp" aria-label="HiringAnt orange color ramp">
+          <div class="ramp-cell" style="background:#FFF4ED;color:#18181B"><b>50</b><span>#FFF4ED</span></div>
+          <div class="ramp-cell" style="background:#FFE6D5;color:#18181B"><b>100</b><span>#FFE6D5</span></div>
+          <div class="ramp-cell" style="background:#FFC9AA;color:#18181B"><b>200</b><span>#FFC9AA</span></div>
+          <div class="ramp-cell" style="background:#FFA474;color:#18181B"><b>300</b><span>#FFA474</span></div>
+          <div class="ramp-cell" style="background:#FF7A3C;color:#18181B"><b>400</b><span>#FF7A3C</span></div>
+          <div class="ramp-cell" style="background:#FF5A00;color:#18181B"><b>500</b><span>#FF5A00</span></div>
+        </div>
+        <div class="ramp" aria-label="HiringAnt orange dark color ramp">
+          <div class="ramp-cell" style="background:#E64F00;color:#18181B"><b>600</b><span>#E64F00</span></div>
+          <div class="ramp-cell" style="background:#BF4100;color:#fff"><b>700</b><span>#BF4100</span></div>
+          <div class="ramp-cell" style="background:#993400;color:#fff"><b>800</b><span>#993400</span></div>
+          <div class="ramp-cell" style="background:#7A2A00;color:#fff"><b>900</b><span>#7A2A00</span></div>
+          <div class="ramp-cell" style="background:#421600;color:#fff"><b>950</b><span>#421600</span></div>
+          <div class="ramp-cell" style="background:#F4F4F5;color:#18181B"><b>Use</b><span>Consistent steps</span></div>
+        </div>
+      </section>
+
+      <section id="balance">
+        <div class="section-head">
+          <div><p class="label">How much color</p><h2>Give the accent room to matter.</h2></div>
+          <p>Let clear space and readable type carry the page. Treat the proportions as a visual guide, not a rigid formula.</p>
+        </div>
+        <div class="rule-strip">
+          <div class="rule"><div class="rule-mark"></div><strong>Neutral canvas first</strong><p>Use the light or dark canvas across most of the screen. It keeps long sessions comfortable.</p></div>
+          <div class="rule"><div class="rule-mark"></div><strong>Orange marks action</strong><p>Reserve saturated orange for the primary action, progress, or one focal brand moment.</p></div>
+          <div class="rule"><div class="rule-mark"></div><strong>Yellow is a cue</strong><p>Use yellow sparingly for a highlight or callout. It should not compete with orange.</p></div>
+        </div>
+      </section>
+
+      <section id="contrast">
+        <div class="section-head">
+          <div><p class="label">Accessibility</p><h2>Pair colors by role, not by habit.</h2></div>
+          <p>Bright orange is a light color. It works well as a fill, but it is too light for small text on white and white text does not read clearly on it.</p>
+        </div>
+        <div class="contrast-layout">
+          <article class="contrast-card">
+            <h3>Primary button · approved</h3>
+            <div class="contrast-sample" style="background:#FF5A00;color:#18181B"><strong>Find your next role</strong><span class="ratio pass">6.71:1 · Pass</span></div>
+            <p>Use near-black text on HiringAnt Orange. Keep the orange fill flat and easy to recognize.</p>
+          </article>
+          <article class="contrast-card">
+            <h3>Orange copy on white · avoid</h3>
+            <div class="contrast-sample" style="background:#fff;color:#FF5A00"><strong>View candidate profile</strong><span class="ratio fail">3.13:1 · Fail</span></div>
+            <p>Use Deep Orange <code>#BF4100</code> for orange links and labels on light backgrounds instead.</p>
+          </article>
+          <article class="contrast-card">
+            <h3>White copy on orange · avoid</h3>
+            <div class="contrast-sample" style="background:#FF5A00;color:#fff"><strong>Continue to shortlist</strong><span class="ratio fail">3.13:1 · Fail</span></div>
+            <p>Do not use white text on #FF5A00. Change the text to #18181B or choose a darker fill.</p>
+          </article>
+          <article class="contrast-card">
+            <h3>Deep orange link · approved</h3>
+            <div class="contrast-sample" style="background:#fff;color:#BF4100"><strong>Review application</strong><span class="ratio pass">5.29:1 · Pass</span></div>
+            <p>Deep Orange <code>#BF4100</code> is the accessible text tone for light surfaces.</p>
+          </article>
+        </div>
+        <div class="contrast-foot"><strong>Quick rule</strong><span>Keep normal text at 4.5:1 contrast or higher. Give icons, borders, and focus indicators enough contrast to remain visible against their surface.</span></div>
+      </section>
+
+      <section id="preview">
+        <div class="section-head">
+          <div><p class="label">Try the colors</p><h2>One interface, two themes.</h2></div>
+          <p>Switch the preview to see how the same brand action sits on HiringAnt’s light and dark product surfaces.</p>
+        </div>
+        <div class="theme-stage">
+          <div class="theme-toolbar">
+            <p>Sample candidate card · click a theme to preview</p>
+            <div class="toggle" role="group" aria-label="Preview theme">
+              <button type="button" data-theme-choice="light" aria-pressed="true">Light</button>
+              <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+            </div>
+          </div>
+          <div class="preview" id="themePreview" data-theme="light">
+            <div class="preview-window">
+              <div class="preview-top"><div class="mini-brand"><span class="mini-dot"></span>HiringAnt</div><span style="color:var(--p-muted);font-size:11px">Candidate pipeline</span></div>
+              <div class="profile"><div class="avatar">AM</div><div><strong>Alex Morgan</strong><small>Product Designer · 5 years</small></div><span class="status-pill">Profile reviewed</span></div>
+              <div class="preview-bottom"><span>Strong match for Product Designer</span><button class="preview-cta" type="button">View profile</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="surfaces">
+        <div class="section-head">
+          <div><p class="label">Product surfaces</p><h2>Build depth with neutral steps.</h2></div>
+          <p>Use the same roles in both themes. In dark mode, lift the surfaces in small steps instead of adding shadows everywhere.</p>
+        </div>
+        <table class="surface-table">
+          <thead><tr><th>Role</th><th>Light</th><th>Dark</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>Canvas</td><td><span class="color-dot" style="background:#FAFAFA"></span><code>#FAFAFA</code></td><td><span class="color-dot" style="background:#18181B"></span><code>#18181B</code></td><td>Page background</td></tr>
+            <tr><td>Surface</td><td><span class="color-dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td><span class="color-dot" style="background:#27272A"></span><code>#27272A</code></td><td>Cards, sheets, menus</td></tr>
+            <tr><td>Inset</td><td><span class="color-dot" style="background:#F4F4F5"></span><code>#F4F4F5</code></td><td><span class="color-dot" style="background:#343438"></span><code>#343438</code></td><td>Chips, table heads, inset panels</td></tr>
+            <tr><td>Primary text</td><td><span class="color-dot" style="background:#141414"></span><code>#141414</code></td><td><span class="color-dot" style="background:#FAFAFA"></span><code>#FAFAFA</code></td><td>Headings and body copy</td></tr>
+            <tr><td>Secondary text</td><td><span class="color-dot" style="background:#6F6F78"></span><code>#6F6F78</code></td><td><span class="color-dot" style="background:#A1A1AA"></span><code>#A1A1AA</code></td><td>Captions and supporting details</td></tr>
+            <tr><td>Border</td><td><span class="color-dot" style="background:#CBCBD2"></span><code>#CBCBD2</code></td><td><span class="color-dot" style="background:#52525B"></span><code>#52525B</code></td><td>Card edges and dividers</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="states">
+        <div class="section-head">
+          <div><p class="label">Status colors</p><h2>Color can carry meaning here.</h2></div>
+          <p>Keep these functional colors distinct from the brand palette. Pair each status color with a clear label or icon.</p>
+        </div>
+        <div class="semantic">
+          <div class="semantic-item success"><strong>Success</strong><code>#15803D · #F0FDF4</code><p>Completed, verified, or ready</p></div>
+          <div class="semantic-item warning"><strong>Warning</strong><code>#B45309 · #FFFBEB</code><p>Pending or needs attention</p></div>
+          <div class="semantic-item danger"><strong>Error</strong><code>#B91C1C · #FEF2F2</code><p>Failed action or destructive step</p></div>
+          <div class="semantic-item info"><strong>Information</strong><code>#1D4ED8 · #EFF6FF</code><p>Neutral system message</p></div>
+        </div>
+        <p class="semantic-note">Do not use red for a neutral hiring decision, or green to suggest an outcome that is not confirmed.</p>
+      </section>
+
+      <section id="handoff">
+        <div class="section-head">
+          <div><p class="label">Ready to use</p><h2>Take the palette into your work.</h2></div>
+          <p>Copy the core CSS variables into a prototype or hand them to a designer or developer. Individual swatches above copy their hex value.</p>
+        </div>
+        <div class="handoff">
+          <div class="handoff-copy"><h3>One source of color.</h3><p>Use shared values across product, web, and presentation work. The button copies a compact CSS starter set.</p><button class="copy-all" type="button" id="copyTokens">Copy CSS tokens</button></div>
+          <pre aria-label="CSS color tokens"><code>:root {
+  <span class="comment">/* HiringAnt brand */</span>
+  --ha-orange: <span class="value">#FF5A00</span>;
+  --ha-orange-deep: <span class="value">#BF4100</span>;
+  --ha-yellow: <span class="value">#FFC800</span>;
+  --ha-ink: <span class="value">#18181B</span>;
+
+  <span class="comment">/* Light surfaces */</span>
+  --ha-canvas: <span class="value">#FAFAFA</span>;
+  --ha-surface: <span class="value">#FFFFFF</span>;
+  --ha-inset: <span class="value">#F4F4F5</span>;
+}</code></pre>
+        </div>
+      </section>
+
+      <div class="print-note">
+        <div class="print-icon" aria-hidden="true">P</div>
+        <div><strong>Taking the orange to print?</strong><p>Hex values describe screen color. For printed pieces, ask the printer for a Pantone-matched orange and approve a proof on the final paper stock.</p></div>
+      </div>
+    </main>
+
+    <footer><span>HiringAnt · Color guide</span><span>Built from the current product and business document color tokens</span></footer>
+  </div>
+  <div id="announce" role="status" aria-live="polite"></div>
+  <script>
+    const announce = document.getElementById("announce");
+    let announceTimer;
+    function showMessage(message) {
+      announce.textContent = message;
+      announce.classList.add("show");
+      clearTimeout(announceTimer);
+      announceTimer = setTimeout(() => announce.classList.remove("show"), 1800);
+    }
+    async function copyText(text, message) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showMessage(message);
+      } catch {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+        showMessage(message);
+      }
+    }
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", () => copyText(button.dataset.copy, `${button.dataset.copy} copied`));
+    });
+    const themePreview = document.getElementById("themePreview");
+    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const theme = button.dataset.themeChoice;
+        themePreview.dataset.theme = theme;
+        document.querySelectorAll("[data-theme-choice]").forEach((option) => option.setAttribute("aria-pressed", String(option === button)));
+      });
+    });
+    document.getElementById("copyTokens").addEventListener("click", () => {
+      copyText(`:root {\n  --ha-orange: #FF5A00;\n  --ha-orange-deep: #BF4100;\n  --ha-yellow: #FFC800;\n  --ha-ink: #18181B;\n  --ha-canvas: #FAFAFA;\n  --ha-surface: #FFFFFF;\n  --ha-inset: #F4F4F5;\n}`, "CSS tokens copied");
+    });
+  </script>
+</body>
+</html>
